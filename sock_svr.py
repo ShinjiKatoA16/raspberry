@@ -8,7 +8,7 @@ sc = socket.socket()
 
 PORT = 5555
 MAX_Q = 5
-#hostname = socket.gethostname()
+hostname = socket.gethostname()
 #print('Host Name:', hostname)
 sc.bind(('', PORT))
 
@@ -20,7 +20,7 @@ while True:
     print('Receiving')
     in_text = client.recv(4096).decode()
     print(in_text)
-    client.send((in_text + ' abc\n').encode())
+    client.send((in_text + " " + hostname).encode())
     print('...')
     # time.sleep(0.5)
     client.close()

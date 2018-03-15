@@ -7,12 +7,10 @@ import socket
 import sys
 import time
 
-sc = socket.socket()
-
 host = sys.argv[1]
 PORT = 5555
 
-for i in range(1000):
+for i in range(100):
     msg = str(i)
     sc = socket.socket()
     sc.connect((host, PORT))
